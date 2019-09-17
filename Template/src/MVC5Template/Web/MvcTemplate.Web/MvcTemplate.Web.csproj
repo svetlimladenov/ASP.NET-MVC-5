@@ -45,6 +45,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Glimpse.Ado, Version=1.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Glimpse.Ado.1.7.3\lib\net45\Glimpse.Ado.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.AspNet, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Glimpse.AspNet.1.8.0\lib\net45\Glimpse.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.Core, Version=1.8.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Glimpse.1.8.6\lib\net45\Glimpse.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.EF6, Version=1.6.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Glimpse.EF6.1.6.5\lib\net45\Glimpse.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.Mvc5, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Glimpse.Mvc5.1.5.3\lib\net45\Glimpse.Mvc5.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -170,12 +185,28 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909170002105_InitialCreate.cs" />
+    <Compile Include="Migrations\201909170002105_InitialCreate.Designer.cs">
+      <DependentUpon>201909170002105_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909170910392_AddedPhones.cs" />
+    <Compile Include="Migrations\201909170910392_AddedPhones.Designer.cs">
+      <DependentUpon>201909170910392_AddedPhones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909170925465_AddressesAdded.cs" />
+    <Compile Include="Migrations\201909170925465_AddressesAdded.Designer.cs">
+      <DependentUpon>201909170925465_AddressesAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Phone.cs" />
+    <Compile Include="Models\UserAddress.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -251,6 +282,17 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201909170002105_InitialCreate.resx">
+      <DependentUpon>201909170002105_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909170910392_AddedPhones.resx">
+      <DependentUpon>201909170910392_AddedPhones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909170925465_AddressesAdded.resx">
+      <DependentUpon>201909170925465_AddressesAdded.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
