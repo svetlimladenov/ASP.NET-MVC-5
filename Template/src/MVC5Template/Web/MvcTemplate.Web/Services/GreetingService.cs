@@ -1,4 +1,6 @@
-﻿namespace MvcTemplate.Web.Services
+﻿using MvcTemplate.Web.Services.Contacts;
+
+namespace MvcTemplate.Web.Services
 {
     public class GreetingService : IGreetingService
     {

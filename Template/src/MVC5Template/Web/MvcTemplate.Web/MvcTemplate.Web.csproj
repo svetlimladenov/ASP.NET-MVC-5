@@ -194,9 +194,13 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\ViewEngineConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PhonesController.cs" />
+    <Compile Include="CustomNamespace\Test.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -205,23 +209,20 @@
     <Compile Include="Migrations\201909170002105_InitialCreate.Designer.cs">
       <DependentUpon>201909170002105_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201909170910392_AddedPhones.cs" />
-    <Compile Include="Migrations\201909170910392_AddedPhones.Designer.cs">
-      <DependentUpon>201909170910392_AddedPhones.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909170925465_AddressesAdded.cs" />
-    <Compile Include="Migrations\201909170925465_AddressesAdded.Designer.cs">
-      <DependentUpon>201909170925465_AddressesAdded.cs</DependentUpon>
+    <Compile Include="Migrations\201909181633551_AddedPhones.cs" />
+    <Compile Include="Migrations\201909181633551_AddedPhones.Designer.cs">
+      <DependentUpon>201909181633551_AddedPhones.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Phone.cs" />
-    <Compile Include="Models\UserAddress.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\GreetingService.cs" />
-    <Compile Include="Services\IGreetingService.cs" />
+    <Compile Include="Services\Contracts\IGreetingService.cs" />
+    <Compile Include="Services\Contracts\IPhonesServices.cs" />
+    <Compile Include="Services\PhonesServices.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -280,6 +281,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Phones\Index.cshtml" />
+    <Content Include="Views\Phones\CreatePhone.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -301,11 +304,8 @@
     <EmbeddedResource Include="Migrations\201909170002105_InitialCreate.resx">
       <DependentUpon>201909170002105_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909170910392_AddedPhones.resx">
-      <DependentUpon>201909170910392_AddedPhones.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909170925465_AddressesAdded.resx">
-      <DependentUpon>201909170925465_AddressesAdded.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201909181633551_AddedPhones.resx">
+      <DependentUpon>201909181633551_AddedPhones.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

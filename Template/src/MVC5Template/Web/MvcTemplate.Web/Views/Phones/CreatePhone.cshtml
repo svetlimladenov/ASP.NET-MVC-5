@@ -1,0 +1,20 @@
+﻿@model MvcTemplate.Web.Controllers.CreatePhoneInputModel
+@{
+    ViewBag.Title = "CreatePhone";
+}
+
+<h2>CreatePhone</h2>
+
+
+
+@using (Html.BeginForm("CreatePhone", "Phones", FormMethod.Post))
+{
+    @Html.ValidationSummary(true);
+
+    <label>Manufacter</label>
+    @Html.TextBoxFor(x => x.Manufacter);
+    <label>Model</label>
+    @Html.TextBoxFor(x => x.Model);
+
+    <input type="submit" value="Create" />
+}
