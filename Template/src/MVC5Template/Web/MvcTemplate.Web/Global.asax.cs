@@ -6,7 +6,10 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using MvcTemplate.Web.App_Start;
+using MvcTemplate.Web.Models;
 using MvcTemplate.Web.Services;
+using MvcTemplate.Web.Services.Contacts;
 using Ninject;
 using Ninject.Web.Common;
 using Ninject.Web.Common.WebHost;
@@ -18,6 +21,10 @@ namespace MvcTemplate.Web
         protected override void OnApplicationStarted()
         {
             base.OnApplicationStarted();
+            
+            ViewEngineConfig.RegisterViewEngines();
+
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
@@ -35,8 +42,11 @@ namespace MvcTemplate.Web
         {
             kernel.Load(Assembly.GetExecutingAssembly());
 
-            kernel.Bind<IGreetingService>().To<GreetingService>().InRequestScope();
+            //add services
 
+            kernel.Bind<IGreetingService>().To<GreetingService>().InRequestScope();
+            kernel.Bind<IPhonesServices>().To<PhonesServices>().InRequestScope();
+            kernel.Bind<ApplicationDbContext>().ToSelf().InRequestScope();
         }
 
 
