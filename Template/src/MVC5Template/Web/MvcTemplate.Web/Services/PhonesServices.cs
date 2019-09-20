@@ -24,7 +24,7 @@ namespace MvcTemplate.Web.Services
                 Id = Guid.NewGuid().ToString(),
                 UserId = id,
                 Manufacter = inputModel.Manufacter,
-                Model = inputModel.Model
+                Model = inputModel.Model,
             };
 
             this.dbContext.Phones.Add(phone);

@@ -4,3 +4,14 @@
 
 <h1>All Phones</h1>
 @Html.ActionLink("Create", "CreatePhone");
+
+
+@Html.Action("ChildAction", new { id = 10});  
+
+@*Similar to ViewComponents in ASP.NET Core  = Html.Action()*@
+
+
+
+@section mySection{
+    <h1>Custom Section</h1> 
+}

@@ -11,10 +11,15 @@
 {
     @Html.ValidationSummary(true);
 
-    <label>Manufacter</label>
-    @Html.TextBoxFor(x => x.Manufacter);
-    <label>Model</label>
-    @Html.TextBoxFor(x => x.Model);
+    @Html.LabelFor(x => x.Manufacter)
+    @Html.TextBoxFor(x => x.Manufacter, new {@class="form-control"});
 
-    <input type="submit" value="Create" />
+    @Html.LabelFor(x => x.Model)
+    @Html.TextBoxFor(x => x.Model, new { pes_sho = "ivan", @class="form-control"});
+
+
+    @Html.LabelFor(m => m.Year);
+    @Html.DropDownListFor(m => m.Year, Model.AvaivableYears, new { @class = "form-control"});
+
+    <input type="submit" value="Create" class="btn btn-info"/>
 }

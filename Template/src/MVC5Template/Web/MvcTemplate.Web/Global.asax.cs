@@ -23,8 +23,6 @@ namespace MvcTemplate.Web
             base.OnApplicationStarted();
             
             ViewEngineConfig.RegisterViewEngines();
-
-
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
