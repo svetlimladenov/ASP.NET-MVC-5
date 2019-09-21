@@ -25,6 +25,13 @@ namespace MvcTemplate.Web
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/scripts/site").Include(
+                    "~/Scripts/MyJsFiles/first.js",
+                    "~/Scripts/MyJsFiles/second.js",
+                    "~/Scripts/MyJsFiles/third.js"));
+
+            BundleTable.EnableOptimizations = true;
         }
     }
 }

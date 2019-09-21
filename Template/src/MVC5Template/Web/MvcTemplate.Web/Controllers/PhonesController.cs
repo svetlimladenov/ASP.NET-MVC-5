@@ -43,7 +43,7 @@ namespace MvcTemplate.Web.Controllers
 
         [ChildActionOnly]
         public ActionResult ChildAction(int id)
-        {
+        { 
             //some login - similar to ViewComponents in ASP.NET Core // Html.Action
             return this.PartialView("_ChildActionPartial",id);
         }
