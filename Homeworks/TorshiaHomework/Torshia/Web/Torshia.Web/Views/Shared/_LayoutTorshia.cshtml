@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>TORSHIA - @ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container-fluid">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-torshia">
+                <a class="navbar-brand nav-link-white" href="/">TORSHIA</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link nav-link-white active" })
+                        </li>
+                        @if (!this.User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                @Html.ActionLink("Login", "Login", "Account", null, new { @class = "nav-link nav-link-white active" })
+                            </li>
+                            
+                            <li class="nav-item">
+                                @Html.ActionLink("Register", "Register", "Account", null, new { @class = "nav-link nav-link-white active" })
+                            </li>
+                        }
+                        else
+                        {
+                            if (this.User.IsInRole("Admin"))
+                            {
+                                <li class="nav-item">
+                                    @Html.ActionLink("Create Task", "Create", "Tasks", null, new { @class = "nav-link nav-link-white active" })
+                                </li>
+                                <li class="nav-item">
+                                    @Html.ActionLink("Reports", "Index", "Reports", null, new { @class = "nav-link nav-link-white active" })
+                                </li>
+                            }
+
+                            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <li class="nav-item"><a href="javascript:document.getElementById('logoutForm').submit()" class="nav-link nav-link-white active">Log off</a></li>
+                            }
+                        }
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        @RenderBody()
+        <footer>
+            <div class="container-fluid bg-torshia">
+                <div class="text-white p-2 text-center">
+                    &copy; CopyRight Sanity Web Design Studios 2018. All rights reserved.
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+

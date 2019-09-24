@@ -10,21 +10,16 @@ namespace Torshia.Web.Controllers
     {
         public ActionResult Index()
         {
-            return View();
-        }
+            var isAdmin = this.User.IsInRole("Admin");
+            var isUser = this.User.IsInRole("User");
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
+            if (this.User.Identity.IsAuthenticated)
+            {
+                return this.View();
+            }
 
-            return View();
-        }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return View("IndexLoggedOut");
         }
     }
 }

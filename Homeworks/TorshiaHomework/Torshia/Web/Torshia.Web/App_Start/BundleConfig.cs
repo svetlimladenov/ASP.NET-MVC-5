@@ -23,8 +23,9 @@ namespace Torshia.Web
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/reset-css.css",
+                      "~/Content/bootstrap.min.css",
+                      "~/Content/style.css"));
         }
     }
 }
