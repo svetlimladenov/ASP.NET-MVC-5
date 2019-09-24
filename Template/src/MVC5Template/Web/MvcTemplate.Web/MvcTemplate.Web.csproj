@@ -202,6 +202,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PhonesController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="CustomNamespace\Test.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
@@ -294,6 +295,7 @@
     <Content Include="Views\Phones\CreatePhone.cshtml" />
     <Content Include="Views\Home\_HomeLayout.cshtml" />
     <Content Include="Views\Phones\_ChildActionPartial.cshtml" />
+    <Content Include="Views\Search\CacheMe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

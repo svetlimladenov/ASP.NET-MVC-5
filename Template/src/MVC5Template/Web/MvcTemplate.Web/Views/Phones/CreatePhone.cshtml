@@ -21,5 +21,6 @@
     @Html.LabelFor(m => m.Year);
     @Html.DropDownListFor(m => m.Year, Model.AvaivableYears, new { @class = "form-control"});
 
+    @Html.AntiForgeryToken()
     <input type="submit" value="Create" class="btn btn-info"/>
 }

@@ -49,6 +49,7 @@ namespace MvcTemplate.Web.Controllers
         }
 
 
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult CreatePhone(CreatePhoneInputModel inputModel)
         {
