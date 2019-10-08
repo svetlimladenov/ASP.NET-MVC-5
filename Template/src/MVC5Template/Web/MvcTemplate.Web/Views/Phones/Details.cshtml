@@ -1,0 +1,13 @@
+﻿@model MvcTemplate.Web.Controllers.PhoneDetailsViewModel
+@{
+    ViewBag.Title = "CheckPhone";
+}
+
+<h1>Phone Details - @Model.Model</h1>
+
+@Html.DisplayFor(m => m, new { customclass = "mycustomclass"});  @*custom tag helper alternative in asp.net core*@ 
+
+
+@*Use DisplayFor when displaying data (i.e. when you generate divs and spans that contain the model values).
+    Use EditorFor when editing/inserting data (i.e. when you generate input tags inside a form).*@
+

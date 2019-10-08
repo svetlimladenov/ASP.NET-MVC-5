@@ -44,7 +44,7 @@ namespace MvcTemplate.Web.Controllers
         [ChildActionOnly]
         public ActionResult ChildAction(int id)
         { 
-            //some login - similar to ViewComponents in ASP.NET Core // Html.Action
+            //some logic - similar to ViewComponents in ASP.NET Core // Html.Action // but here even filters apply 
             return this.PartialView("_ChildActionPartial",id);
         }
 
@@ -61,6 +61,22 @@ namespace MvcTemplate.Web.Controllers
 
             return this.RedirectToAction("Index");
         }
+
+        public ActionResult Details(string model)
+        {
+            var viewModle = this.phonesServices.GetPhoneDetails(model);
+
+            return this.View(viewModle);
+        }
+    }
+
+    public class PhoneDetailsViewModel
+    {
+        public string Model { get; set; }
+
+        public string Manufacter { get; set; }
+
+        public string Year { get; set; }
     }
 
     public class CreatePhoneInputModel

@@ -5,7 +5,7 @@
 
 <h2>CreatePhone</h2>
 
-
+@Html.DisplayFor(x => x.Model)
 
 @using (Html.BeginForm("CreatePhone", "Phones", FormMethod.Post))
 {
@@ -20,6 +20,11 @@
 
     @Html.LabelFor(m => m.Year);
     @Html.DropDownListFor(m => m.Year, Model.AvaivableYears, new { @class = "form-control"});
+
+
+    @Html.EditorFor(x => x.Model)
+    @Html.EditorFor(x => x.Manufacter)
+
 
     @Html.AntiForgeryToken()
     <input type="submit" value="Create" class="btn btn-info"/>

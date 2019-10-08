@@ -296,10 +296,15 @@
     <Content Include="Views\Home\_HomeLayout.cshtml" />
     <Content Include="Views\Phones\_ChildActionPartial.cshtml" />
     <Content Include="Views\Search\CacheMe.cshtml" />
+    <Content Include="Views\DisplayTemplates\String.cshtml" />
+    <Content Include="Views\EditorTemplates\String.cshtml" />
+    <Content Include="Views\Phones\Details.cshtml" />
+    <Content Include="Views\Phones\DisplayTemplates\PhoneDetailsViewModel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Filters\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

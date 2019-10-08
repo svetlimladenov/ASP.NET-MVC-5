@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.Entity.Validation;
+using System.Linq;
 using System.Web;
 using Microsoft.AspNet.Identity.Owin;
 using MvcTemplate.Web.Controllers;
@@ -53,6 +54,23 @@ namespace MvcTemplate.Web.Services
 
 
             return phone;
+        }
+
+        public PhoneDetailsViewModel GetPhoneDetails(string model)
+        {
+            var phone = this.dbContext.Phones.FirstOrDefault(x => x.Model.ToLower() == model.ToLower());
+            if (phone == null)
+            {
+                throw new ArgumentException("Invalid phone");
+            }
+            var viewModel = new PhoneDetailsViewModel()
+            {
+                Manufacter =  phone.Manufacter,
+                Model = phone.Model,
+                Year = DateTime.UtcNow.Year.ToString()
+            };
+
+            return viewModel;
         }
     }
 }

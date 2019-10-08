@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
@@ -12,6 +13,12 @@ namespace MvcTemplate.Web
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+            routes.MapRoute(
+                name: "PhonesRoute",
+                url: "Phones/Details/{model}",
+                defaults: new {controller = "Phones", action = "Details"}
+            );
 
             routes.MapRoute(
                 name: "NewList",

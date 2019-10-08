@@ -1,0 +1,19 @@
+﻿@model MvcTemplate.Web.Controllers.PhoneDetailsViewModel
+@{
+    ViewBag.Title = "PhoneDetailsViewModel";
+}
+
+@{
+    string classToUse = "form-control";
+    if (ViewData["customclass"] != null)
+    {
+        classToUse = (string) ViewData["customclass"];
+    }
+}
+
+<div class="@classToUse">
+    <h1 class="text-capitalize text-danger">@Model.Model</h1>
+    <h1 class="text-capitalize text-info">@Model.Manufacter</h1>
+    <h1 class="text-capitalize text-info">@Model.Year</h1>
+</div>
+

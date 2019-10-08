@@ -12,5 +12,7 @@ namespace MvcTemplate.Web.Services.Contacts
     public interface IPhonesServices
     {
         Phone CreatePhone(CreatePhoneInputModel inputModel, string id);
+
+        PhoneDetailsViewModel GetPhoneDetails(string model);
     }
 }
